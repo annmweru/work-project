@@ -11,6 +11,7 @@ export class RegisterComponent implements OnInit {
 
   exform!: FormGroup;
   ngOnInit(){
+
     this.exform=new FormGroup({
       'firstname' : new FormControl(null, Validators.required ),
       'lastname' : new FormControl(null, Validators.required ),
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit {
       'password' : new FormControl( '', [Validators.required, Validators.minLength(6)]),
       'confirmPassword': new FormControl( ['', Validators.required]),
       'phonenumber' : new FormControl(null, [Validators.required, Validators.pattern('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!$%@#£€*?&)]',),],)
-   
+
     });
     {
       validator: MustMatch('password', 'confirmPassword')}
@@ -28,6 +29,6 @@ export class RegisterComponent implements OnInit {
     console.log(this.exform.value);
     this.exform.reset();
   }
-  
+
 }
 

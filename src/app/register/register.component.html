@@ -10,39 +10,39 @@
                     <form [formGroup]="exform">
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">First Name</label>
-                            <input  FormControlName="firstname" type="text" class="form-control" id="exampleInputPassword1">
+                            <input formControlName="firstname" type="text" class="form-control" id="exampleInputPassword1">
                             <small *ngIf="exform.get('firstname')?.invalid && exform.get('firstname')?.touched" class="text-danger">  First Name is required</small>
                           </div>
                           <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Last Name</label>
-                            <input  FormControlName="name" type="text" class="form-control" id="exampleInputPassword1">
+                            <input formControlName="name" type="text" class="form-control" id="exampleInputPassword1">
                             <small *ngIf="exform.get('lastname')?.invalid && exform.get('lastname')?.touched" class="text-danger"> Last Name is required</small>
                           </div>
                           <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Other Names</label>
-                            <input FormControlName="name" type="text" class="form-control" id="exampleInputPassword1">
+                            <input formControlName="name" type="text" class="form-control" id="exampleInputPassword1">
                             <small *ngIf="exform.get('othername')?.invalid && exform.get('othername')?.touched" class="text-danger">  Other Name is optional</small>
                           </div>
-                          
+
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Email</label>
-                          <input  FormControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                           <div id="emailHelp" class="form-text"></div>
                           <small  *ngIf="exform.get('email')?.invalid && exform.get('email')?.touched" class="text-danger"> Email is required</small>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Phone Number</label>
-                            <input FormControlName="phonenumber" type="number" class="form-control" id="exampleInputPassword1">
+                            <input formControlName="phonenumber" type="number" class="form-control" id="exampleInputPassword1">
                             <small *ngIf="exform.get('phonenumber')?.invalid && exform.get('phonenumber')?.touched" class="text-danger"> phone number is required(minimum 12)</small>
                           </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input FormControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+                          <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
                           <small  *ngIf="exform.get('password')?.invalid && exform.get('password')?.touched" class="text-danger"> strong password is required (minimum 7)</small>
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label"> Confirm Password</label>
-                          <input FormControlName="confirmpassword" type="confirmpassword" class="form-control" id="exampleInputPassword1">
+                          <input formControlName="confirmpassword" type="confirmpassword" class="form-control" id="exampleInputPassword1">
                           <small  *ngIf="exform.get('confirmpassword')?.invalid && exform.get('confirmpassword')?.touched" class="text-danger"> strong password is required (minimum 7)</small>
                         </div>
                         <button (click)="clicksub()" [disabled] = "exform.invalid" type="submit" class="btn btn-primary" mb-2>Signup</button>
