@@ -42,8 +42,9 @@
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label"> Confirm Password</label>
-                          <input formControlName="confirmpassword" type="confirmpassword" class="form-control" id="exampleInputPassword1">
+                          <input formControlName="confirmpassword" type="password" class="form-control" id="exampleInputPassword1">
                           <small  *ngIf="exform.get('confirmpassword')?.invalid && exform.get('confirmpassword')?.touched" class="text-danger"> strong password is required (minimum 7)</small>
+                          <small  *ngIf="exform.get('confirmpassword')?.value !=  exform.get('password')?.value && exform.get('confirmpassword')?.touched" class="text-danger"> Passwords don't match</small>
                         </div>
                         <button (click)="clicksub()" [disabled] = "exform.invalid" type="submit" class="btn btn-primary" mb-2>Signup</button>
                       </form>
