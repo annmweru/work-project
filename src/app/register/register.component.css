@@ -1,0 +1,25 @@
+.card{
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 50%);
+    background: hsla(205, 46%, 30%,1);
+    background-color: linear-gradient(90deg rgb(60, 117, 158) 0%, hsla(260,29%,36%,1)100%);
+}
+.card  h1,
+h6{
+    color: #fff;
+}
+label{
+    color: #fff;
+}
+.form-control.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+.form-control.ng-touched.ng-valid{
+    border: 1px solid green;
+}
+

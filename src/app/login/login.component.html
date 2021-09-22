@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h6>Please enter username & password</h6>
+                </div>
+                <form>
+                    <form [formGroup]="myform"> 
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Username</label>
+                          <input  formContolName=name type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <div id="emailHelp" class="form-text">
+                            <small *ngIf="myform.get('username')?.invalid && myform.get('username')?.touched" class="text-danger">   UserName is required</small>
+                          </div>
+                          
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1">
+                        
+                          <small *ngIf="myform.get('password')?.invalid && myform.get('password')?.touched" class="text-danger">   Password is required</small></div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                      </form>
+                      <a style="color: #fff; margin-top:10px"routerLink='/register'>New user? click here to signup</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
