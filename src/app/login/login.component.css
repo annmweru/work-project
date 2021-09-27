@@ -1,22 +1,124 @@
+
+
 .card{
     border: none;
     width: 500px;
     padding: 40px;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    background: hsla(205, 46%, 30%,1);
-    background-color: linear-gradient(90deg rgb(60, 117, 158) 0%, hsla(260,29%,36%,1)100%);
+    left: 50%; 
+    background-color: linear-gradient(90deg rgb(60, 117, 158) , hsla(260,29%,36%,1)100%);
 }
-.card  h1,
-h6{
-    color: #fff;
+.card  h1
+{
+    color: rgb(210, 210, 216);
 }
 label{
-    color: #fff;
+    color: black;
 }
 
+@media screen and (max-width:768px) {
+  .card {
+      max-width:100%;
+      width: 100%;
+     
+  }
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  .card {
+    max-width:100%;
+    width: 100%;
 
+}
+}
 
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+  .card {
+    max-width:100%;
+    width: 100%;
     
+    
+}
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+  .card {
+    max-width:100%;
+    width: 100%;
+   
+}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+  .card {
+    max-width:100%;
+    width: 100%;
+   
+}
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+  .card {
+    max-width:100%;
+    width: 100%;
+ 
+}
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+  .card {
+    max-width:100%;
+    width: 100%;
+ 
+}
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+  .card {
+    max-width:100%;
+    width: 100%;
+
+}
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+  .card {
+    max-width:100%;
+    width: 100%;
+  
+}
+}
+
+/* iPhone 4 - 5s ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+  .card {
+    max-width:100%;
+    width: 100%;
+    background-color: black;
+   
+}
+}
+

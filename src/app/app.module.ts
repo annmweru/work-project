@@ -8,8 +8,13 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { UserslistComponent } from './userslist/userslist.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ListComponent } from './list/list.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { ModeratorComponent } from './moderator/moderator.component';
+import { UserComponent } from './user/user.component';
+import { ProfileComponent } from './profile/profile.component';
+// import { AlertComponent } from './_components/alert/alert.component';
 
 
 
@@ -21,7 +26,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+  
 
   ],
   declarations: [
@@ -29,7 +35,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     LoginComponent,
     UserslistComponent,
-    ListComponent,
+    HomeComponent,
+    AdminComponent,
+    ModeratorComponent,
+    UserComponent,
+    ProfileComponent,
+    // AlertComponent,
   
     
   ],

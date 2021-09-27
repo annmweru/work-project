@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup} from '@angular/forms';
-import { ApiService } from '../shared/api.service';
+import { ApiService } from '../shared/auth.service';
 import { UserListModels } from './userlist-models';
 
 
@@ -19,11 +19,12 @@ export class UserslistComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue=this.FormBuilder.group({
-      firstName: [''],
-      lastName: [''],
-      otherName: [''],
+      first_name: [''],
+      last_name: [''],
+      other_name: [''],
       email: [''],
-      phoneNumber: [''],
+      password:[''],
+      phone_number: [''],
 
     
     
@@ -31,19 +32,21 @@ export class UserslistComponent implements OnInit {
   }
 
   postUserListDetails(){
-    this.UserModelobj.firstName=this.formValue.value.firstName;
-    this.UserModelobj.lastName=this.formValue.value.lastName;
-    this.UserModelobj.otherName=this.formValue.value.otherName;
+    this.UserModelobj.first_name=this.formValue.value.firstName;
+    this.UserModelobj.last_name=this.formValue.value.lastName;
+    this.UserModelobj.other_name=this.formValue.value.otherName;
     this.UserModelobj.email=this.formValue.value.email;
-    this.UserModelobj.phoneNumber=this.formValue.value.phoneNumber;
+    this.UserModelobj.password=this.formValue.value.password;
+    this.UserModelobj.phone_number=this.formValue.value.phoneNumber;
+     this.api.
 
     this.api.postUser(this.UserModelobj)
-      .subscribe(res=>{
+      .subscribe((res: any)=>{
         console.log(res);
         alert("User is added successfully")
       },
-      err=>{
-        alert("something is wrong")
+        (      _err: any)=>{
+        alert("Something is wrong")
       })
 
       }

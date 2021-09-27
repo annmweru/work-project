@@ -1,9 +1,10 @@
 export class UserListModels{
     id: number=0;
-    firstName:string="";
-    lastName:string="";
-    otherName:string="";
+    first_name:string="";
+    last_name:string="";
+    other_name:string="";
     email:string="";
-    phoneNumber:string="";
+    password:string="";
+    phone_number:string="";
 
 }

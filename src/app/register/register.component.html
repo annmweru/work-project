@@ -1,56 +1,73 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="text-center">
-                    <h1>Signup</h1>
-                    <h6>Signup Here</h6>
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="text-center">
+                  <h1>Signup</h1>
+                  <h6>Signup Here</h6>
+              </div>
+                  <form [formGroup]="exform" (ngSubmit)="onSubmit()">
+                      
+                    <div class="mb-3">
+                      <label>First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                    </div>
+                   </div>
+                    
+                    <div class="mb-3">
+                       <label>Last Name</label>
+                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                      <label>Other Name</label>
+                    <input type="text" formControlName="otherName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.otherName.errors" class="invalid-feedback">
+                        <div *ngIf="f.otherName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                     <div class="mb-3">
+                      <label>Email</label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.pattern">Email must be a valid email address</div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                  <label>Phone Number</label>
+                  <input (keypress)="keyPress($event)" required type="email" formControlName="phonenumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phonenumber.errors }">
+                  <div *ngIf="submitted && f.phonenumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.phonenumber.errors.required">Phone number is required</div>
+                    <div *ngIf="f.phonenumber.errors.pattern || f.phonenumber.errors.maxlength || f.phonenumber.errors.minlength">Phone number must be at least 10 numbers</div>
+                  </div>
                 </div>
-                <form>
-                    <form [formGroup]="exform">
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">First Name</label>
-                            <input formControlName="firstname" type="text" class="form-control" id="exampleInputPassword1">
-                            <small *ngIf="exform.get('firstname')?.invalid && exform.get('firstname')?.touched" class="text-danger">  First Name is required</small>
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Last Name</label>
-                            <input formControlName="name" type="text" class="form-control" id="exampleInputPassword1">
-                            <small *ngIf="exform.get('lastname')?.invalid && exform.get('lastname')?.touched" class="text-danger"> Last Name is required</small>
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Other Names</label>
-                            <input formControlName="name" type="text" class="form-control" id="exampleInputPassword1">
-                            <small *ngIf="exform.get('othername')?.invalid && exform.get('othername')?.touched" class="text-danger">  Other Name is optional</small>
-                          </div>
-
-                        <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Email</label>
-                          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          <div id="emailHelp" class="form-text"></div>
-                          <small  *ngIf="exform.get('email')?.invalid && exform.get('email')?.touched" class="text-danger"> Email is required</small>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Phone Number</label>
-                            <input formControlName="phonenumber" type="number" class="form-control" id="exampleInputPassword1">
-                            <small *ngIf="exform.get('phonenumber')?.invalid && exform.get('phonenumber')?.touched" class="text-danger"> phone number is required(minimum 12)</small>
-                          </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
-                          <small  *ngIf="exform.get('password')?.invalid && exform.get('password')?.touched" class="text-danger"> strong password is required (minimum 7)</small>
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label"> Confirm Password</label>
-                          <input formControlName="confirmpassword" type="password" class="form-control" id="exampleInputPassword1">
-                          <small  *ngIf="exform.get('confirmpassword')?.invalid && exform.get('confirmpassword')?.touched" class="text-danger"> strong password is required (minimum 7)</small>
-                          <small  *ngIf="exform.get('confirmpassword')?.value !=  exform.get('password')?.value && exform.get('confirmpassword')?.touched" class="text-danger"> Passwords don't match</small>
-                        </div>
-                        <button (click)="clicksub()" [disabled] = "exform.invalid" type="submit" class="btn btn-primary" mb-2>Signup</button>
-                      </form>
-                      <a style="color: #fff; margin-top:10px" routerLink='/login'>Already registered? Click to login</a>
-                </form>
-            </div>
-        </div>
-    </div>
+                    <div class="mb-3">
+                      <label>Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label>Confirm Password</label>
+                    <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                    <small  *ngIf="exform.get('password')?.invalid && exform.get('password')?.touched" class="text-danger"> strong password is required (minimum 7)</small>
+                    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                        <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                        <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                    </div>
+                  </div>
+            <button [disabled]="exform.invalid" class="btn btn-primary mb-2">Signup</button>
+                    
+            <a routerLink="../login" class="btn btn-link">Login</a>
+              </form>
+          </div>
+      </div>
+  </div>
 </div>
